@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from .forms import AddMoneyForm, LoginForm, RegisterForm, TransactionForm
 from .models import User, Transaction
-from .forms import RegisterForm, LoginForm, AddMoneyForm, TransactionForm
 from django.contrib import messages
 
 def home(request):
