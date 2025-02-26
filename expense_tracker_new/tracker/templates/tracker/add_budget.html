@@ -1,0 +1,10 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+<h2>Set or Update Your Budget</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save Budget</button>
+</form>
+<a href="{% url 'dashboard' %}">Back to Dashboard</a>
+{% endblock %}

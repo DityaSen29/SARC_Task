@@ -1,0 +1,22 @@
+{% extends 'tracker/base.html' %}
+{% block content %}
+<h2>Register</h2>
+
+{% if form.errors %}
+    <div style="background-color: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; border: 1px solid #f5c6cb; margin-bottom: 15px;">
+        <strong>Oops! Something went wrong:</strong>
+        <ul>
+            {% for field, errors in form.errors.items %}
+                <li>{{ field }}: {{ errors|striptags }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="{% url 'login' %}">Login here</a>.</p>
+{% endblock %}

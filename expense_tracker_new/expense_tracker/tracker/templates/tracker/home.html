@@ -1,0 +1,10 @@
+{% extends 'tracker/base.html' %}
+
+{% block content %}
+<h1>Welcome to the Expense Tracker</h1>
+<p>Register or login to start managing your expenses easily!</p>
+<div>
+    <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+    <a href="{% url 'login' %}" class="btn btn-secondary">Login</a>
+</div>
+{% endblock %}
